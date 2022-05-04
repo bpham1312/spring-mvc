@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Species">
+	<resultMap type="species" id="speciesMap">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+	</resultMap>
+	<select id="selectList" parameterType="species"
+		resultMap="speciesMap">
+			<![CDATA[
+			SELECT * FROM species
+			]]>
+	</select>
+	<select id="selectOne" parameterType="species"
+		resultMap="speciesMap">
+			<![CDATA[
+			SELECT * FROM species
+			WHERE id=#{id}
+			]]>
+	</select>
+	<select id="selectLast" parameterType="species"
+		resultMap="speciesMap">
+			<![CDATA[
+			SELECT * FROM species 
+			ORDER BY id DESC
+			LIMIT 1
+			]]>
+	</select>
+	<insert id="insert" parameterType="species">
+		<![CDATA[
+		INSERT INTO species (name)
+		VALUE(#{name})
+		]]>
+	</insert>
+	<update id="update" parameterType="species">
+		<![CDATA[
+		UPDATE species SET name = #{name}
+		WHERE id= #{id}
+		]]>
+	</update>
+	<delete id="delete" parameterType="species">
+		<![CDATA[
+		DELETE FROM species
+		WHERE id= #{id}
+		]]>
+	</delete>
+</mapper>

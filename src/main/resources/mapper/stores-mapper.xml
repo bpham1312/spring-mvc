@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Stores">
+	<resultMap type="stores" id="storesMap">
+		<id property="id" column="id" />
+		<result property="quantity" column="quantity" />
+		<result property="price" column="price" />
+		<association property="cats"
+					 column="id_cat"
+					 javaType="cats"
+					 select="Cats.selectOne"/>
+	</resultMap>
+	<select id="selectList" parameterType="stores"
+		resultMap="storesMap">
+			<![CDATA[
+			SELECT * FROM stores
+			]]>
+	</select>
+	<select id="selectOne" parameterType="stores"
+		resultMap="storesMap">
+			<![CDATA[
+			SELECT * FROM stores
+			WHERE id=#{id}
+			]]>
+	</select>
+	<insert id="insert" parameterType="stores">
+		<![CDATA[
+		INSERT INTO stores (id_cat, quantity, price)
+		VALUE(#{cats.id}, #{quantity}, #{price})
+		]]>
+	</insert>
+	<update id="update" parameterType="stores">
+		<![CDATA[
+		UPDATE stores SET quantity = #{quantity}, price = #{price}, id_cat = #{cats.id}
+		WHERE id = #{id} 
+		]]>
+	</update>
+	<delete id="delete" parameterType="stores">
+		<![CDATA[
+		DELETE FROM stores
+		WHERE id=#{id}
+		]]>
+	</delete>
+</mapper>

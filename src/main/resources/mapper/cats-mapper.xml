@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Cats">
+
+	<resultMap type="cats" id="catsMap">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="description" column="description" />
+		<association property="species" column="idSpecies"
+			javaType="species" select="Species.selectOne" />
+	</resultMap>
+	<select id="selectList" parameterType="cats" resultMap="catsMap">
+			<![CDATA[
+			SELECT * FROM cats
+			]]>
+	</select>
+	<select id="selectListInStores" parameterType="cats"
+		resultMap="catsMap">
+			<![CDATA[
+			SELECT id, name
+			FROM cats
+			WHERE id NOT IN (SELECT id_cat FROM stores )
+			]]>
+	</select>
+	<select id="selectLast" parameterType="cats"
+		resultMap="catsMap">
+			<![CDATA[
+			SELECT * FROM cats 
+			ORDER BY id DESC
+			LIMIT 1
+			]]>
+	</select>
+	<select id="selectOne" parameterType="cats" resultMap="catsMap">
+			<![CDATA[
+			SELECT * FROM cats
+			WHERE id=#{id}
+			]]>
+	</select>
+	<insert id="insert" parameterType="cats">
+		<![CDATA[
+		INSERT INTO cats (name, description, idSpecies)
+		VALUE(#{name}, #{description}, #{species.id})
+		]]>
+	</insert>
+	<update id="update" parameterType="cats">
+		<![CDATA[
+		UPDATE cats SET name = #{name}, description=#{description}, idSpecies=#{species.id}
+		WHERE id= #{id}
+		]]>
+	</update>
+	<delete id="delete" parameterType="cats">
+		<![CDATA[
+		DELETE FROM cats
+		WHERE id= #{id}
+		]]>
+	</delete>
+
+</mapper>
