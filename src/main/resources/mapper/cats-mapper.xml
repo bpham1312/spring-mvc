@@ -5,6 +5,7 @@
 	<resultMap type="cats" id="catsMap">
 		<id property="id" column="id" />
 		<result property="name" column="name" />
+		<result property="image" column="image" />
 		<result property="description" column="description" />
 		<association property="species" column="idSpecies"
 			javaType="species" select="Species.selectOne" />
@@ -38,13 +39,13 @@
 	</select>
 	<insert id="insert" parameterType="cats">
 		<![CDATA[
-		INSERT INTO cats (name, description, idSpecies)
-		VALUE(#{name}, #{description}, #{species.id})
+		INSERT INTO cats (name, image, description, idSpecies)
+		VALUE(#{name}, #{image}, #{description}, #{species.id})
 		]]>
 	</insert>
 	<update id="update" parameterType="cats">
 		<![CDATA[
-		UPDATE cats SET name = #{name}, description=#{description}, idSpecies=#{species.id}
+		UPDATE cats SET name = #{name}, image = #{image}, description=#{description}, idSpecies=#{species.id}
 		WHERE id= #{id}
 		]]>
 	</update>

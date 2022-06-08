@@ -3,6 +3,7 @@ package com.demo.spring.entity;
 public class Cats {
 	private int id;
 	private String name;
+	private String image;
 	private String description;
 	private Species species;
 	public int getId() {
@@ -16,6 +17,12 @@ public class Cats {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
 	}
 	public String getDescription() {
 		return description;
@@ -31,7 +38,9 @@ public class Cats {
 	}
 	@Override
 	public String toString() {
-		return "Cats [id=" + id + ", name=" + name + ", description=" + description + ", species=" + species + "]";
+		return "Cats [id=" + id + ", name=" + name + ", image=" + image + ", description=" + description + ", species="
+				+ species + "]";
 	}
+	
 
 }

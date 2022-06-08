@@ -24,7 +24,10 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-		
+	<context-param>
+			<param-name>FileUpload</param-name>
+			<param-value>C:\Users\Admin\git\spring-mvc\</param-value>
+	</context-param>
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>

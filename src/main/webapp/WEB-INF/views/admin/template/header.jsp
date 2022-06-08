@@ -12,10 +12,11 @@
 <body>
 	 <div id="header">
         <img src="${pageContext.request.contextPath }/resources/asset/images/logo/cat.png" alt="logo" class="logo">
-        <lable class="user-name"><i class="ti-user"></i>Đăng Nguyên<i class="ti-angle-down"></i>
+        <lable class="user-name"><i class="ti-user"></i>${user}<i class="ti-angle-down"></i>
             <div class="sub-nav-menu">
-                <a href="#" class="">Thông tin tài khoản</a>
-                <a href="#" class="">Đăng xuất</a>
+                <a href="#" class=""></a>
+                <a href="${pageContext.request.contextPath }/" class="">Index</a>
+                <a href="${pageContext.request.contextPath }/account/login" class="">Logout</a>
             </div>
         </lable>
     </div>

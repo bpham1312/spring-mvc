@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.demo.spring.daoImp.SpeciesDAO_Imp;
 import com.demo.spring.entity.Species;
-import com.demo.spring.service.InterfaceService;
 import com.demo.spring.service.SpeciesService;
 
 @Service

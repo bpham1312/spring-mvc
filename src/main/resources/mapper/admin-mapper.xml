@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Admin">
+	<resultMap type="admin" id="adminMap">
+		<id property="id" column="id" />
+		<result property="userName" column="userName" />
+		<result property="password" column="password" />
+		<result property="role" column="role" />
+	</resultMap>
+	<select id="selectList" parameterType="admin"
+		resultMap="adminMap">
+			<![CDATA[
+			SELECT * FROM admin
+			]]>
+	</select>
+	<select id="selectOne" parameterType="admin"
+		resultMap="adminMap">
+			<![CDATA[
+			SELECT * FROM admin
+			WHERE id=#{id}
+			]]>
+	</select>
+	<select id="selectByName" parameterType="admin"
+		resultMap="adminMap">
+			<![CDATA[
+			SELECT * FROM admin
+			WHERE userName=#{userName}
+			]]>
+	</select>
+	<select id="checkLogin" parameterType="admin"
+		resultMap="adminMap">
+			<![CDATA[
+			SELECT * FROM admin
+			WHERE userName=#{userName} and password=#{password}
+			]]>
+	</select>
+	<insert id="insert" parameterType="admin">
+		<![CDATA[
+		INSERT INTO admin (userName, password, role)
+		VALUE(#{userName}, #{password}, #{role})
+		]]>
+	</insert>
+	<update id="update" parameterType="admin">
+		<![CDATA[
+		UPDATE admin SET password = #{password}, role= #{role}
+		WHERE id= #{id}
+		]]>
+	</update>
+	<delete id="delete" parameterType="admin">
+		<![CDATA[
+		DELETE FROM admin
+		WHERE id= #{id}
+		]]>
+	</delete>
+</mapper>

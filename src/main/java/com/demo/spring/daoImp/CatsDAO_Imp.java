@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.demo.spring.dao.CatsDAO;
-import com.demo.spring.dao.InterfaceDAO;
 import com.demo.spring.entity.Cats;
 
 @Repository

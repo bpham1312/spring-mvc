@@ -1,0 +1,546 @@
+/* reset css */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.active{
+    display: block !important;
+}
+
+html{
+    --height: 41px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main{
+    overflow: hidden;
+}
+
+/* Header start */
+#header{
+    background-color: #000;
+    height: var(--height);
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+}
+
+.list-nav{
+    float: left;
+}
+
+.list-nav ul{
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+}
+
+.list-nav li{
+    display: inline-block;
+    position: relative;
+    font-size: 15px;
+    text-transform: uppercase;
+    line-height: 41px;
+    padding: 0;
+    list-style: none;
+}
+
+
+
+.list-nav a{
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 24px;
+}
+
+.list-nav a:hover{
+    background-color: #ccc;
+    color: #000;
+}
+
+
+.list-nav .subNav{
+    position: absolute;
+    top: 41px;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    min-width: 200px;
+    display: none;
+}
+
+.list-nav li:hover .subNav{
+    display: block;
+}
+
+.subNav li{
+    width: 100%;
+    background-color: #fff;
+    
+}
+
+.subNav a{
+    display: block;
+    color: #000;
+}
+
+#header .btn-login{
+	float: right;
+    color: #fff;
+}
+
+#header .btn-login:hover .sub-nav-user{
+	display:block;
+}
+
+.login a{
+	line-height: var(--height);
+    padding: 12px 40px;
+    text-decoration: none;
+	color: #fff;
+}
+
+.btn-login i{
+	line-height: var(--height);
+    padding: 12px 40px;  
+}
+
+.btn-login .sub-nav-user{
+	display: none;
+	background-color: #fff;
+	width: 100%;	
+	text-align:center;	
+    padding: 12px 24px;
+}
+
+
+.btn-login .sub-nav-user:hover{
+	background-color: #ccc;
+}
+
+.sub-nav-user a{
+	text-decoration: none;
+	color: #000;
+}
+
+#header .btn-sreach {
+    float: right;
+    color: #fff;
+}
+
+.btn-sreach i{
+    line-height: var(--height);
+    padding: 12px 24px;
+}
+
+#header .menu-btn{
+    float: right;
+    color: #fff;
+    display: none;
+}
+
+.menu-btn i{
+    line-height: var(--height);
+    padding: 12px 24px;
+}
+
+.btn-sreach i:hover{
+    background-color: red;
+}
+/* Header end */
+
+/* Slide start */
+#slide{
+    margin-top: var(--height);
+    position: relative;
+}
+
+#slide .btn-prev{
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    z-index: 1;
+    color: #fff;
+    font-size: 50px;
+    text-shadow: 0px 0px 6px #000;
+}
+#slide .btn-next{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    z-index: 1;
+    color: #fff;
+    font-size: 50px;
+    text-shadow: 0px 0px 6px #000;
+}
+
+#slide .container-image{
+    display: flex;
+    transition: 0.4s ease;
+}
+
+.container-image .slide-image{
+    position: relative;
+    min-width: 100%;
+    max-height: 50%;
+}
+
+
+#slide .slide-text{
+    user-select: none;
+    display: none;
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    text-align: center;
+    padding: 32px 16px;
+    text-shadow: 0px 0px 6px #000;
+    line-height: 1.5;
+    z-index: 1;
+}
+
+.slide-text .header-text{
+    font-weight: 300;
+}
+
+.slide-text .body-text{
+    margin: 15px 0;
+}
+/* Slide end */
+
+/* Body start */
+#body{
+    text-align: center;
+    font-size: 15px;
+}
+
+#body .section-body{
+    width: 800px;
+    max-width: 100%;
+    padding: 64px 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-body .header{
+    margin: 10px 0;
+    font-weight: 300;
+}
+
+.section-body .sub-header{
+    margin: 15px 0;
+    font-style: italic;
+    opacity: 0.5;
+}
+
+/* The Band start*/
+.section-body .decriptions{
+    text-align: justify;
+    line-height: 1.4;
+    margin: 15px 0;
+}
+
+.section-body .team{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.team .information{
+    padding: 32px 0;
+}
+
+.information .name-member{
+    margin: 15px 0;
+    line-height: 1.5;
+}
+
+.information .img-member{
+    width: 60%;
+    border-radius: 4px;
+}
+
+/* The Band end*/
+/* Tour start */
+#body .body-tour{
+    background-color: #000;
+    color: #fff;
+}
+
+.section-body .list-ticket{
+    background-color: #fff;
+    color: #000;
+    margin: 30px 0;
+    max-width: 30%;
+}
+
+.list-ticket .list-date{
+    list-style: none;
+    text-align: left;
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd;
+    color: #757575;
+    min-width: 300px;
+}
+
+.list-ticket .sold-out{
+    margin-left: 16px;
+    padding: 0 8px;
+    background-color: #f44336;
+    color: #fff;
+}
+
+.list-ticket .quantity{
+    float: right;
+    padding: 0 8px;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    margin-right: 16px;
+}
+
+.section-body .booking{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding: 32px 0;
+}
+
+.booking .list-ticket{
+    margin: 8px 8px;
+    line-height: 1.4;
+}
+
+.list-ticket img{
+    width: 100%;
+    
+    display: block;
+}
+
+.list-ticket .ticket-detail{
+    text-align: left;
+    margin: 0 16px;
+}
+
+.ticket-detail .head{
+    margin: 16px 0;
+    font-weight: 700;
+}
+
+.ticket-detail .name{
+    margin: 16px 0;
+    opacity: 0.7;
+}
+
+.ticket-detail .decription{
+    margin: 16px 0;
+}
+
+.ticket-detail .buy{
+    margin: 0 0 16px;
+    padding: 8px 16px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+}
+
+.ticket-detail .buy:hover{
+    background-color: #ccc;
+    color: #000;
+}
+/* Tour end */
+
+/* Contact start */
+.container-contact{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.infor-contact i{
+    display: block;
+    text-align: left;
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+.form-contact input{
+    margin: 4px 0;
+    padding: 8px;
+}
+
+.form-contact .one-column{
+    text-align: left;
+}
+
+.one-column input{
+    width: 100%;
+}
+
+.form-contact button{
+    float: right;
+    padding: 8px 16px;
+    margin: 16px 0;
+    background-color: #000;
+    color: #fff;
+    border: none;
+}
+
+.form-contact button:hover{
+    background-color: #ccc;
+    color: #000;
+}
+/* Contact end */
+/* Body end */
+
+/* Map start */
+#map img{
+    width: 100%;
+    filter: grayscale(50%);
+}
+/* Map end */
+
+/* footer start */
+#footer{
+    padding: 64px 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+.social a{
+    text-decoration: none;
+    color: #757575;
+    font-size: 25px;
+    margin: 0 2px;
+}
+
+#footer .coppy-right{
+    margin: 15px 0;
+}
+
+.coppy-right a{
+    color: #000;
+}
+/* footer end */
+
+/* Modal Box start*/
+.js-modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    padding: 100px 0 0;
+}
+
+.open{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.js-modal .modal-box{
+    position: relative;
+    width: 900px;
+    min-height: 200px;
+    background-color: #fff;
+    animation: modalFadeIn ease .5s;
+}
+
+.modal-box .btn-close{
+    color: #fff;
+    padding: 8px 16px;
+}
+
+.modal-box .btn-close:hover{
+    background-color: #ccc;
+    color: #000;
+}
+
+.modal-box .header{
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    background-color: #009688;
+    padding: 32px 16px;
+}
+
+.modal-box .btn-close{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.header i{
+    margin-right: 16px;
+}
+
+.body{
+    padding: 0 16px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.body label, .body input, .body button{
+    display: block;
+}
+
+.body label{
+    margin: 15px 0;
+}
+
+.body .input{
+    width: 100%;
+    padding: 8px;
+}
+
+.body .pay{
+    margin: 16px 0;
+    width: 100%;
+    padding: 16px;
+    background-color: #009688;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.body .pay:hover{
+    background-color: #ccc;
+    color: #000;
+}
+
+.body p{
+    float: right;
+    font-weight: 200;
+    padding-bottom: 16px;
+}
+
+.body a{
+    font-weight: 200;
+    color: #2196F3;
+}
+/* Modal Box end*/
+
+@keyframes modalFadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(-140px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

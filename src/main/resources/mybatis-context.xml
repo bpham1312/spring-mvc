@@ -7,6 +7,7 @@
 			<typeAlias alias="cats" type="com.demo.spring.entity.Cats"/>
 			<typeAlias alias="species" type="com.demo.spring.entity.Species"/>
 			<typeAlias alias="stores" type="com.demo.spring.entity.Stores"/>
+			<typeAlias alias="admin" type="com.demo.spring.entity.Admin"/>
 	</typeAliases>
 	
 </configuration>

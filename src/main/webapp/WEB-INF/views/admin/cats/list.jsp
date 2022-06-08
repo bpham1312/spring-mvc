@@ -24,6 +24,7 @@
 			<tr>
 				<th>id</th>
 				<th>name</th>
+				<th>image</th>
 				<th>description</th>
 				<th>Species</th>
 				<th>Action</th>
@@ -32,6 +33,7 @@
 			<tr>
 				<td>${cats.id}</td>
 				<td>${cats.name}</td>
+				<td><img class="img" src="${pageContext.request.contextPath }/resources/uploads/${cats.image}" alt="cat"></td>
 				<td>${cats.description}</td>
 				<td>${cats.species.name}</td>
 				<td><a href="${pageContext.request.contextPath }/admin/cats/delete?id=${cats.id}" class=""><i class="ti-trash">Delete</i></a>

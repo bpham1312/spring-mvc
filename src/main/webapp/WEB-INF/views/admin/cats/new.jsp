@@ -22,11 +22,15 @@
 				<h1>new cat</h1>
 			</div>
 			<form method="post"
-				action="${pageContext.request.contextPath }/admin/cats/add">
+				action="${pageContext.request.contextPath }/admin/cats/add" enctype="multipart/form-data">
 				<div class="form-container">
 					<div class="form-input">
 						<label for="name">Cat name:</label> <input class="JS-fade" type="text" id="name"
 							name="name" placeholder="Name">
+					</div>
+					<div class="form-input">
+						<label for="image">Image:</label> <input class="JS-fade" type="file" id="image" required="required" accept="image/png, image/jpeg"
+							name="file">
 					</div>
 					<div class="form-input">
 						<label for="description">Description:</label>

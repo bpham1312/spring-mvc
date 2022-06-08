@@ -1,0 +1,105 @@
+/* pc */
+@media(min-width: 1024px){
+
+}
+/* ipad */
+@media(min-width: 740px)and(max-width: 1023px){
+
+}
+/* Mobile */
+@media(max-width: 739px){
+    #slide .btn-prev, #slide .btn-next, #slide .slide-text{
+        display: none !important;
+    }
+    
+    .close-subNav{
+        display: none !important;
+    }
+
+    #header{
+        width: 100%;
+        position: fixed;
+        height: auto;
+        overflow: hidden;
+    }
+
+    #header.close-menu{
+        height: 41px;
+    }
+
+    #header .btn-sreach {
+        display: none;
+    }
+    
+    #header .list-nav{
+        width: 100%;
+    }
+    
+    .list-nav li:first-child{
+        display: inline-block;
+    }
+    
+    .list-nav li{
+        list-style: none;
+        display: block ;
+    }
+
+    .list-nav a:hover{
+        padding-right: 100%;
+    }
+    
+    #header .menu-btn{
+        display: block;
+        position: absolute;
+        top:0;
+        right:0;
+    }
+
+    #header .menu-btn:hover{
+        background-color: #ccc;
+        color: black;
+    }
+
+    .list-nav .subNav{
+        position: static;
+    }
+    .subNav li{
+        background-color: #000;
+        color: #fff;
+    }
+
+    .subNav a{
+        color: #fff;
+        padding: 12px 32px;
+    }
+
+
+
+    .section-body .booking{
+        flex-flow: column nowrap;
+    }
+
+    .booking .list-ticket{
+        margin-bottom: 16px;
+    }
+
+    .js-modal .modal-box{
+        max-width: 92%;
+    }
+
+    .container-contact{
+        flex-flow: column nowrap;
+        margin: 0px 1%;
+    }
+
+    .container-contact .form-contact{
+        width: 100%;
+    }
+
+    .form-contact .two-column{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        min-height: 90px;
+    }
+}

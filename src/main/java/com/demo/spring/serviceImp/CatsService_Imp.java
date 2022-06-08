@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import com.demo.spring.daoImp.CatsDAO_Imp;
 import com.demo.spring.entity.Cats;
 import com.demo.spring.service.CatsService;
-import com.demo.spring.service.InterfaceService;
 
 @Service
 public class CatsService_Imp implements CatsService{

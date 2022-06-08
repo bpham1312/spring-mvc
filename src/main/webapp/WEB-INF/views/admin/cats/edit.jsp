@@ -28,6 +28,12 @@
 							name="name" value="${cats.name}" placeholder="Name">
 					</div>
 					<div class="form-input">
+						<label for="image">Cat name:</label> <input class="JS-fade" type="file" id="image" accept="image/png, image/jpeg"
+							name="reImage" >
+							<input class="" style="display:none" type="text" id="image" 
+							name="image" value="${cats.image}">
+					</div>
+					<div class="form-input">
 						<label for="description">Description:</label>
 						<textarea id="description" class="JS-fade" name="description" rows="5">${cats.description}</textarea>
 					</div>
